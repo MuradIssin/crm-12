@@ -90,9 +90,12 @@
       };
 
       const whoWin = (computerBit, playerBit) => {
+        console.log(`проверка`, computerBit, playerBit);
         switch (true) {
           case computerBit === playerBit: return message.draw;
           case (computerBit === 0) && (playerBit === 1): return computerWin();
+          // камень и ножницы 1
+          case (computerBit === 0) && (playerBit === 2): return playerWin();
           // камень и ножницы 1
           case (computerBit === 1) && (playerBit === 0): return playerWin();
           // ножницы и камень -1
@@ -102,6 +105,7 @@
           // бумага и камень 1
           case (computerBit === 2) && (playerBit === 1): return playerWin();
           // бумага и ножницы -1
+          // console(`ошибка`, computerBit, playerBit)
           default: return `нет данных`;
         }
       };
